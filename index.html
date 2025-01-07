@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="header">
+      <h1>QR CODE GENERATOR ONLINE</h1>
+      <p>Made by Chocomett</p>
+    </div>
+    <section>
+        <div class="info">
+          <div class="info1">
+              
+          </div>
+          <div class="info2">
+  
+          </div>
+        </div>
+        <div class="result">
+
+        </div>
+    </section>
+  <!-- <div class="main">
+    <div>
+      <input type="text" placeholder="masukan teks" id="input"/>
+      <button id="btn">buat</button>
+    </div>
+    <div class="output">
+      <b>output</b><br />
+      <span>qrcode akan muncul disini</span><br>
+      <div id="qrcode"></div>
+    </div>
+  </div> -->
+
+
+    <script src="qrcodejs\jquery.min.js"></script>
+    <script src="qrcodejs\qrcode.js"></script>
+
+    <script>
+      var qrcode = new QRCode(document.getElementById("qrcode"),{
+        text: "",
+        width: 500,
+        height: 500,
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H,
+      });
+
+    //   trigger input menggunakan Jquery
+    //   memastikan bahwa btn bisa diklik
+    //   get elemen by id button, berikan addlistener click lalu buat apa yang akan terjadi di dalam function
+    //   
+    $('#btn').click(function(){
+        var text = $('#input').val() // input dijadikan variabel
+        qrcode.makeCode(text); // agar code dapat dirubah secara dinamis
+    })
+    </script>
+  </body>
+</html>
