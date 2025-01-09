@@ -25,23 +25,13 @@
           </div>
         </div>
         <div class="result">
-              <b>output</b><br />
-              <div id="qrcode"></div>
-              
+              <h1>OUTPUT QR CODE</h1>
+              <div class="border">
+                <div id="qrcode"></div>
+              </div>
+              <button id="downloadBtn">Download QR Code</button>
         </div>
     </section>
-  <!-- <div class="main">
-    <div>
-      <input type="text" placeholder="masukan teks" id="input"/>
-      <button id="btn">buat</button>
-    </div>
-    <div class="output">
-      <b>output</b><br />
-      <span>qrcode akan muncul disini</span><br>
-      <div id="qrcode"></div>
-    </div>
-  </div> -->
-
 
     <script src="qrcodejs\jquery.min.js"></script>
     <script src="qrcodejs\qrcode.js"></script>
@@ -49,8 +39,8 @@
     <script>
       var qrcode = new QRCode(document.getElementById("qrcode"),{
         text: "",
-        width: 500,
-        height: 500,
+        width: 300,
+        height: 300,
         colorDark: "#000000",
         colorLight: "#ffffff",
         correctLevel: QRCode.CorrectLevel.H,
@@ -64,6 +54,15 @@
         var text = $('#input').val() // input dijadikan variabel
         qrcode.makeCode(text); // agar code dapat dirubah secara dinamis
     })
+
+    document.getElementById("downloadBtn").addEventListener("click", function () {
+      const qrCanvas = document.querySelector("#qrcode canvas");
+      const imageData = qrCanvas.toDataURL("image/png");
+      const link = document.createElement("a");
+      link.href = imageData;
+      link.download = "mett/qrcode.png";
+      link.click(); 
+    });
     </script>
   </body>
 </html>
