@@ -29,12 +29,17 @@ body{
     
 }
 
-.info1 {
-    padding: 50px;   
+.info1 h1 {
+    font-size: 30px;  
 }
 
-.info2 {
-    padding: 50px;  
+.info2 h1 {
+    font-size: 30px;  
+    margin-bottom: 2rem;
+}
+
+.text {
+  margin-bottom: 1rem;
 }
 
 .result {
@@ -81,8 +86,12 @@ body{
     background-color: #0056b3; /* Warna biru lebih gelap saat hover */
   }
 
+  .inputBtn {
+    margin-bottom: 3rem;
+  }
 
-#downloadBtn {
+
+  #downloadBtn {
     margin: 1rem;
     background-color: #007bff;
     color: #ffffff;
@@ -98,22 +107,67 @@ body{
     background-color: #0056b3;
   }
 
-#main {
+  #main {
     background: linear-gradient(45deg, #4facfe, #00f2fe);
 
     display: flex;
     justify-content: space-around;
     width: 100%;
     height: 85vh;
-}
+  }
 
-.border {
+  .border {
     width: 210;
     height: 210;
     border: 5px solid rgb(0, 0, 0);
     border-radius: 5px;
+  }
+
+  #qrcode {
+    padding: 20px;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 600px;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#qrcode {
-    padding: 20px;
+.step {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: #007bff;
+    border-radius: 50%;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.step-description {
+    font-size: 0.9rem;
+    color: #666;
 }
